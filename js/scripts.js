@@ -1,31 +1,34 @@
-function calculateArea() {
-var text = document.getElementsByName('rawtext')[0].value;
+function truncate() {
 
-var cleantext = text.replace(/\r?\n|\r/g," ");
-//out = out.match(/.{1,225}/g);;;
+    // Get the transcript text input
+    var text = document.getElementsByName('rawtext')[0].value;
 
-var len = 225;
-var curr = len;
-var prev = 0;
-output = [];
-while (cleantext[curr]) {
-    if (cleantext[curr++] == ' ') {
-        var sub = cleantext.substring(prev,curr);
-        //sub = sub.replace(/\.+$/, "");
-        sub = sub.replace(/^[.\s]+|[.\s]+$/g, "");
-        console.log(sub);
-        output.push(sub);
-        prev = curr;
-        curr += len;
+    // Remove linebreaks
+    var cleantext = text.replace(/\r?\n|\r/g, " ");
+
+    // Initialize counter variables & desired substring length
+    var len = 225;
+    var curr = len;
+    var prev = 0;
+    output = [];
+
+    // String cutting loop
+    while (cleantext[curr]) {
+        if (cleantext[curr++] == ' ') {
+            var sub = cleantext.substring(prev, curr);
+            sub = sub.replace(/^[.\s]+|[.\s]+$/g, ""); // Remove trailing periods
+            console.log(sub);
+            output.push(sub);
+            prev = curr;
+            curr += len;
+        }
+
     }
 
-}
+    // Join output string with double linebreaks
+    output = output.join("\n \n")
 
-output = output.join("\n \n")
+    // Push output to textarea
+    document.getElementById("output").value = output;
 
-//console.log(output);
-
-document.getElementById("output").value = output;
-
-//console.log(textarea.value);
 }

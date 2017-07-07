@@ -8,21 +8,24 @@
 
   <body>
     <div class="container">
-    <h1><center> The Truncater</center></h1>
-    <br>
-    <div class = "form-group">
-    <label for="">Transcripts go here...</label><br>
-    <textarea class="form-control" rows="10" name="rawtext"></textarea><br>
-    <button type="button" class="btn btn-default" onClick="calculateArea()">Truncate me!</button><br>
-  </div>
+      <h1><center> The Truncater</center></h1>
 
+      <br>
 
-    <br>
-  <div class = "form-group">
-    <label for="output">Log me! </label><br>
-    <textarea class="form-control" rows="10" id="output"></textarea>
+      <div class = "form-group">
+        <label for="">Transcripts go here...</label><br>
+        <textarea class="form-control" rows="10" name="rawtext"></textarea><br>
+        <button type="button" class="btn btn-default" onClick="truncate()">Truncate me!</button><br>
+      </div>
+
+      <br>
+
+      <div class = "form-group">
+        <label for="output">Log me! </label><br>
+        <textarea class="form-control" rows="10" id="output"></textarea>
+      </div>
+
   </div>
-</div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,9 +35,10 @@
 
     <footer class="footer">
       <div class="container">
-        <p class> Made with &#9829; for Radiolab in 2017.</p>
+        <p> Made with &#9829; for Radiolab in 2017.</p>
       </div>
     </footer>
+
   </body>
 
-  </html>
+</html>
