@@ -19,7 +19,7 @@ while (cleantext[curr]) {
 
 
 
-output.push(cleantext.substr(prev));
+//output.push(cleantext.substr(prev));
 output = output.join("\n \n")
 
 console.log(output);
