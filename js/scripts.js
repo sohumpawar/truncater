@@ -10,19 +10,20 @@ var prev = 0;
 output = [];
 while (cleantext[curr]) {
     if (cleantext[curr++] == ' ') {
-        output.push(cleantext.substring(prev,curr));
+        var sub = cleantext.substring(prev,curr);
+        //sub = sub.replace(/\.+$/, "");
+        sub = sub.replace(/^[.\s]+|[.\s]+$/g, "");
+        console.log(sub);
+        output.push(sub);
         prev = curr;
         curr += len;
     }
 
 }
 
-
-
-//output.push(cleantext.substr(prev));
 output = output.join("\n \n")
 
-console.log(output);
+//console.log(output);
 
 document.getElementById("output").value = output;
 
